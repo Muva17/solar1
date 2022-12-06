@@ -1,0 +1,373 @@
+*
+{
+	margin: 0;
+	padding: 0;
+	font-family: 'poppins', sans-serif;
+}
+.container
+{
+	position: relative;
+	padding: 0 100px;
+	min-height: 100vh;
+}
+.container:before
+{
+	content: '';
+	position: absolute;
+	top: 0;
+	right:0;
+	width: 360px;
+	height: 100%;
+	background: #333;
+	z-index: -2;
+}
+.container:after
+{
+	content: 'Healthy';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	font-size: 18vw;
+	z-index: -2;
+	font-weight: 700;
+	color: #333;
+	opacity: 0.1;
+}
+header
+{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 30px 0;
+}
+header .logo{
+	font-weight: 700;
+	text-transform: uppercase;
+	color: #333;
+	text-decoration: none;
+	font-size: 30px;
+}
+.logos
+{
+	color: #FF1493;
+}
+header ul
+{
+position: relative;
+display: flex;
+}
+header ul li
+{
+	list-style: none;
+	margin: 0 20px;
+}
+header ul li a
+{
+	position: relative;
+	text-decoration: none;
+	font-size: 18px;
+	padding:4px 10px;
+	color: #333;
+}
+header ul li:nth-child(2) a,
+header ul li:nth-child(3) a
+{
+	color: #fff;
+}
+header ul li a:before
+{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 100%;
+	background: #FF1493;
+	z-index: -1;
+	transition: 0.5s ease-in-out;
+}
+header ul li a:hover:before,
+header ul li a.active:before
+{
+	width:45px;
+}
+.content
+{
+	display: flex;
+	justify-content: space-between;
+	margin-top: 50px;
+}
+.content .bannerText
+{
+	position: relative;
+	max-width: 500px;
+	margin-right: 50px;
+
+}
+.content .bannerText div
+{
+	display: none;
+	
+}.content .bannerText div.active
+{
+	display: initial;
+	
+}
+.content .bannerText h2
+{
+	font-size: 50px;
+	text-transform: uppercase;
+	font-weight: 800;
+	line-height: 1.2em;
+	color: #333;
+}
+.content .bannerText p
+{
+	font-size: 18px;
+	color: #333;
+	line-height: 1.8em;
+	margin: 20px 0;
+}
+.content .bannerText a
+{
+	position: relative;
+	display: inline-block;
+	text-transform: uppercase;
+	color: #333;
+	font-size: 18px;
+	font-weight: 700;
+	letter-spacing: 1px;
+	text-decoration: none;
+	padding: 15px; 
+}
+.content .bannerText a:before
+{
+	content: '';
+	position: absolute;
+	border-radius: 15px;
+	top: 0;
+	left: 0;
+	width: 60px;
+	height: 100%;
+	background: #FF1493;
+	z-index: -1;
+	transition: 0.5s ease-in-out;
+}
+.content .bannerText a:hover:before
+{
+	width: 100%;
+}
+.content .bannerImg
+{
+	position: relative;
+	width: 440px;
+	height: 440px;
+	background: #000;
+} 
+.content .bannerImg img
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: 0.5s;
+	opacity: 0;
+}
+.content .bannerImg img.active
+{
+	opacity: 1;
+}
+.icons
+{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 50px 0;
+}
+.icons .sci,
+.icons .control
+{
+	position: relative;
+	display: flex;
+}
+.icons .sci li
+{
+	list-style: none;
+	margin-right: 30px;
+}
+.icons .sci li img
+{
+	display: inline-block;
+	transition: 0.5s ease-in-out;
+	width: 40px;
+	height: 40px;
+
+}
+.icons .sci li:hover img
+{
+	transform:translateY(-10px);
+	background: #FF1493;
+	border-radius: 7px;
+}
+.control img
+{
+	width: 50px;
+	height: 50px;
+}
+.icons .control li
+{
+	list-style: none;
+	margin-left: 20px;
+	cursor: pointer;
+	filter: invert(1);
+	transition: 0.5s ease-in-out;
+}
+.icons .control li:hover
+{
+	opacity: 0.5;
+}
+
+.menuicon
+{
+	display: none;
+}
+.copyrighttext
+{
+	margin-top: 20px;
+	font-size: 18px;
+	font-weight: 300;
+	color: #666;
+	text-align:center;
+}
+.copyrighttext a
+{
+	color: #FF1493;
+	text-decoration: none;
+}
+@media (max-width: 1100px)
+{
+.content .bannerImg
+{
+	position: relative;
+	color: #fff;
+	width: 540px;
+	height: 370px;
+	background: #000;
+	text-align:center;
+}
+.content .bannerImg img
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: 0.5s;
+	opacity: 0;
+}
+}
+@media (max-width: 1010px)
+{
+	.container
+	{
+		padding: 20px 50px;
+	}
+	.container:before
+	{
+		display: none;
+	}
+
+header
+{
+	padding: 2px;
+}
+.icons .control li 
+{
+	filter: invert(0);
+}
+.content .bannerText h2
+{
+	font-size: 40px;
+}
+.content .bannerText p
+{
+	font-size: 15px;
+}
+.content {
+   margin-top: 10px;
+   flex-direction: column-reverse;
+   padding-left: 20px;
+   align-items: center;
+}
+.content .bannerimg
+{
+	width: 100%;
+	height: 40vh;
+	margin: 20px 0;
+}
+.content .bannertext
+{
+	width: 100%;
+	padding-right: 0;
+}
+header ul 
+{
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background: #fff;
+	z-index: 10000;
+	padding: 100px 0;
+}
+header ul li
+{
+	padding: 30px;
+	text-align: center;
+
+}
+
+header ul li a
+{
+	color: #333 !important;
+	font-size: 40px;
+
+}header.active ul
+{
+	display: initial;
+}
+header.active .menuicon 
+{
+	background: #fff url(icon/cross.png);
+    width: 48px;
+	height: 48px;
+	background-position: 1px;
+	background-size: 50px;
+    background-repeat:no-repeat;
+}
+header ul li a:hover:before,
+header ul li a.active:before
+{
+	width:100%;
+}
+.menuicon
+{
+display: initial;
+position: fixed;
+right:50px;
+cursor: pointer;
+padding: 9px;
+z-index: 100000;
+background: #fff url(icon/menubar.png);
+width: 48px;
+height: 48px;
+background-size: 50px;
+background-position: 7px; 
+background-repeat:no-repeat;
+}
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device, initial-scale=1.0">
+	<title>home</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="container">
+	<header id="nav">
+		<a class="logo" href="#">F<span class="logos">OO</span>DS</a>
+		<ul>
+			<li><a href="#" class="active">Home</a></li>
+			<li><a href="#">About Us</a></li>
+			<li><a href="#">Contact Us</a></li>
+		</ul>
+		<span class="menuicon" onclick="menutoggle();"></span>
+	</header>
+	<div class="content">
+		<div class="bannerText" id="slideshowtext">
+			<div class="active">
+				<h2>What is <span class="logos"> non</span>-veg?</h2>
+				<p>
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+<a href="#">Read More</a> 
+			</div>
+			<div>
+				<h2>What is <span class="logos">fruits</span> food?</h2>
+				<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+<a href="#">Read More</a> 
+			</div>
+			<div>
+				<h2>What is <span class="logos">chinese</span> food?</h2>
+				<p>Pellentesque eget est ligula. Quisque non sapien non lorem ultrices vehicula. Cras aliquet ipsum eu eros fringilla posuere. Vivamus condimentum velit vel justo porttitor pellentesque. Sed sed sem tortor. Nam sed ipsum libero. Fusce convallis scelerisque libero, eu ornare ipsum suscipit at. In quis sagittis enim. Sed efficitur eget neque et mattis. Duis eget ligula in augue venenatis dignissim dignissim et erat. Maecenas nisi ex, egestas at dictum sed, luctus eget dolor. Mauris a tortor eu dui fermentum interdum ornare sollicitudin est. Morbi sed mauris eu urna dapibus scelerisque.</p>
+<a href="#">Read More</a> 
+			</div>
+			<div>
+				<h2>What is <span class="logos">food</span> vegetable?</h2>
+				<p>Integer auctor tincidunt nunc, a viverra nulla tempus at. Aenean fringilla molestie magna sed facilisis. Fusce quis justo viverra, rutrum metus ac, posuere odio. Vestibulum semper purus ipsum, sed fringilla tellus fringilla volutpat. In cursus eu nunc ut iaculis. Vestibulum ut porttitor eros. Sed imperdiet purus eget sodales feugiat. Donec sollicitudin rutrum ex id tempus. Sed mattis est vel volutpat volutpat. Pellentesque non ante molestie, aliquet mi eget, interdum magna.</p>
+<a href="#">Read More</a> 
+			</div>
+		</div>
+		<div class="bannerImg" id="slideshow">
+			<img src="img/img (1).jpeg" class="active">
+			<img src="img/img (2).jpeg">
+			<img src="img/img (3).jpeg">
+			<img src="img/img (4).jpeg">
+		</div>
+	</div>
+	<div class="icons">
+			<ul class="sci">
+				<li><a href="#"><img src="icon/facebook.png"></a></li>
+				<li><a href="#"><img src="icon/instagram.png"></a></li>
+				<li><a href="#"><img src="icon/twitter.png"></a></li>
+			</ul>
+			<ul class="control">
+			  <li><a><img src="icon/leftcircle.png" onclick="prevslide();prevslidetext();"></a></li>
+			  <li><a><img src="icon/rightcircle.png" onclick="nextslide();nextslidetext();"></a></li>			
+			</ul>
+	</div>
+</div>
+<script type="text/javascript">
+	var slideshow = document.getElementById('slideshow');
+	var slides = slideshow.getElementsByTagName('img');
+	var index = 0;
+
+	function nextslide(){
+		slides[index].classList.remove('active');
+		index = (index + 1) % slides.length;
+		slides[index].classList.add('active');
+	}
+	function prevslide(){
+		slides[index].classList.remove('active');
+		index = (index - 1+ slides.length) % slides.length;
+		slides[index].classList.add('active');
+	}
+
+	var slideshowtext = document.getElementById('slideshowtext');
+	var slidestext = slideshowtext.getElementsByTagName('div');
+	var i = 0;
+
+	function nextslidetext(){
+		slidestext[i].classList.remove('active');
+		i = (i + 1) % slidestext.length;
+		slidestext[i].classList.add('active');
+	}
+	function prevslidetext(){
+		slidestext[i].classList.remove('active');
+		i = (i - 1+ slidestext.length) % slidestext.length;
+		slidestext[i].classList.add('active');
+	}
+	function menutoggle() {
+		var nav=document.getElementById('nav')
+		nav.classList.toggle('active')
+	}
+</script>
+<section class="footer">
+<h4 class="copyrighttext">Copyright &#169; 2021<a href="#">MUVA</a>.All rights reserved</h4>	
+</section>
+</body>
+</html>
